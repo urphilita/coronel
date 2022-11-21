@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Asistencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Registro de Usuario</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/nuevo">Control Supervisor</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Registro de Supervisor</h1>
+            <div class="card-body">
+                <form th:action="@{/guardar}" th:object="${supervisor}" method="post">
+                    <div class="form-group">
+                        <label>Nombre: </label>
+                        <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Digite su nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ap Paterno: </label>
+                        <input type="text" name="paterno" th:field="*{appaterno}" class="form-control" placeholder="Digite su apellido paterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ap Materno: </label>
+                        <input type="text" name="materno" th:field="*{apmaterno}" class="form-control" placeholder="Digite su apellido materno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CI: </label>
+                        <input type="text" name="ci" th:field="*{ci}" class="form-control" placeholder="Digite su CI" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña: </label>
+                        <input type="password" name="contrasenia" th:field="*{contrasenia}" class="form-control" placeholder="Digite su contraseña" required>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn  btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
